@@ -1,0 +1,523 @@
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../../assets/fonts/Ubuntu-Regular.ttf");
+}
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../../assets/fonts/Ubuntu-Medium.ttf");
+}
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../../assets/fonts/Ubuntu-Bold.ttf");
+}
+section#sidebar {
+  background-image: url(../../../assets/images/bg-sidebar-desktop.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 1em 0 1em 1em;
+  border-radius: 8px;
+  padding: 2em 1em;
+  width: 15vw;
+}
+section#sidebar .step {
+  color: hsl(231deg, 100%, 99%);
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  margin-bottom: 1em;
+  align-items: center;
+  justify-items: center;
+  gap: 0 0.5em;
+}
+section#sidebar .step .number {
+  grid-column: 1/span 1;
+  grid-row: 1/span 2;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background-color: transparent;
+  color: hsl(231deg, 100%, 99%);
+  text-align: center;
+  line-height: 20px;
+  width: 20px;
+  padding: 0.3em;
+  margin: 0;
+}
+section#sidebar .step .number.active {
+  background-color: hsl(228deg, 100%, 84%);
+  color: hsl(213deg, 96%, 18%);
+  border: 0px;
+}
+section#sidebar .step .subtitle {
+  justify-self: start;
+  grid-column: 2/span 1;
+  grid-row: 1/span 1;
+  margin: 0;
+  text-transform: uppercase;
+  color: hsl(229deg, 24%, 87%);
+  font-size: 0.75em;
+}
+section#sidebar .step .title {
+  grid-column: 2/span 1;
+  grid-row: 2/span 1;
+  justify-self: start;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 0.75em;
+}
+
+@media (max-width: 521px) {
+  section#sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 20%;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 1em;
+    background-image: url("../../../assets/images/bg-sidebar-mobile.svg");
+    background-size: auto;
+    background-position: 0 0;
+    padding: 0;
+  }
+  section#sidebar .step {
+    padding-top: 2em;
+    display: block;
+  }
+  section#sidebar .step .number {
+    width: 30px;
+    line-height: 30px;
+  }
+  section#sidebar .step .title {
+    display: none;
+  }
+  section#sidebar .step .subtitle {
+    display: none;
+  }
+}
+section#content {
+  flex: 1 1 0;
+  color: hsl(213deg, 96%, 18%);
+  margin-right: 3em;
+  display: flex;
+  flex-flow: column nowrap;
+}
+section#content form {
+  flex: 1;
+}
+section#content form .step {
+  margin-right: 2em;
+}
+section#content form .step .title {
+  font-size: 2em;
+  padding-top: 0.7em;
+  margin-bottom: 0.3em;
+  font-weight: 700;
+}
+section#content form .step .subtitle {
+  margin: 0;
+  color: hsl(231deg, 11%, 63%);
+  margin-bottom: 2em;
+  font-weight: 500;
+}
+section#content form .step .form-control {
+  margin-bottom: 1.5em;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  font-weight: 500;
+}
+section#content form .step .form-control > div {
+  display: flex;
+  justify-content: space-between;
+}
+section#content form .step .form-control > div label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 0.5em;
+  font-weight: 500;
+}
+section#content form .step .form-control > div p {
+  color: hsl(354deg, 84%, 57%);
+  display: none;
+}
+section#content form .step .form-control > div p.display {
+  display: block;
+}
+section#content form .step .form-control input:is([type=text], [type=email], [type=tel]) {
+  position: relative;
+  color: hsl(213deg, 96%, 18%);
+  padding: 1em;
+  border-radius: 6px;
+  display: block;
+  border: 1px hsl(231deg, 11%, 63%) solid;
+  font-weight: 700;
+  cursor: pointer;
+}
+section#content form .step .form-control input:is([type=text], [type=email], [type=tel])::placeholder {
+  color: hsl(231deg, 11%, 63%);
+}
+section#content form .step .form-control input:is([type=text], [type=email], [type=tel]):is(:focus, :focus-within, :focus-visible) {
+  border-color: hsl(243deg, 100%, 62%);
+  outline: none;
+}
+section#content form .step .form-control input:is([type=text], [type=email], [type=tel]).required {
+  border-color: hsl(354deg, 84%, 57%);
+}
+section#content form .step .form-control.plan {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+section#content form .step .form-control.plan input:checked + label {
+  border-color: hsl(243deg, 100%, 62%);
+  background-color: hsla(243deg, 100%, 62%, 0.05);
+}
+section#content form .step .form-control.plan label {
+  flex: 1;
+  border-radius: 8px;
+  border: 0.1em solid hsl(229deg, 24%, 87%);
+  padding: 1em 0.75em 0.5em 0.75em;
+  cursor: pointer;
+}
+section#content form .step .form-control.plan label .title {
+  margin-top: 1.5em;
+  font-size: 16px;
+  font-weight: 600;
+}
+section#content form .step .form-control.plan label .subtitle {
+  margin-bottom: 0.3em;
+  font-weight: 400;
+}
+section#content form .step .form-control.plan label .deal {
+  font-size: 12px;
+  margin-bottom: 0.3em;
+}
+section#content form .step .form-control.choose-plan {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  gap: 1em;
+  background-color: hsla(243deg, 100%, 62%, 0.05);
+  padding: 1em 0;
+  border-radius: 10px;
+}
+section#content form .step .form-control.choose-plan input:checked + label {
+  color: hsl(213deg, 96%, 18%);
+}
+section#content form .step .form-control.choose-plan label {
+  color: hsl(231deg, 11%, 63%);
+  cursor: pointer;
+}
+section#content form .step .form-control.choose-plan .toggle-switch {
+  width: 40px;
+  height: 20px;
+  background-color: hsl(213deg, 96%, 18%);
+  border-radius: 10px;
+}
+section#content form .step .form-control.choose-plan .toggle-switch .slider {
+  width: 14px;
+  height: 14px;
+  margin: 3px 4px;
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 50%;
+  animation-fill-mode: forwards;
+  animation-duration: 0.4s;
+}
+section#content form .step .form-control.choose-plan .toggle-switch .slider.monthly {
+  animation-name: monthly;
+}
+section#content form .step .form-control.choose-plan .toggle-switch .slider.yearly {
+  animation-name: yearly;
+}
+section#content form .step .form-control.add-on {
+  margin-bottom: 1em;
+}
+section#content form .step .form-control.add-on input:checked + label {
+  border-color: hsl(243deg, 100%, 62%);
+  background-color: hsla(243deg, 100%, 62%, 0.05);
+}
+section#content form .step .form-control.add-on input:checked + label .custom-checkbox {
+  background-color: hsl(243deg, 100%, 62%);
+}
+section#content form .step .form-control.add-on input:checked + label .custom-checkbox::after {
+  display: block;
+}
+section#content form .step .form-control.add-on label {
+  display: flex;
+  padding: 1em 1.5em;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 1.5em;
+  border: 1px solid hsl(229deg, 24%, 87%);
+  border-radius: 10px;
+  cursor: pointer;
+}
+section#content form .step .form-control.add-on label .custom-checkbox {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid hsl(229deg, 24%, 87%);
+}
+section#content form .step .form-control.add-on label .custom-checkbox::after {
+  content: "";
+  display: none;
+  position: absolute;
+  right: 7px;
+  top: 3px;
+  width: 4px;
+  height: 8px;
+  border-right: 2px solid hsl(0deg, 0%, 100%);
+  border-bottom: 2px solid hsl(0deg, 0%, 100%);
+  rotate: 45deg;
+}
+section#content form .step .form-control.add-on label .text-content {
+  flex: 1;
+}
+section#content form .step .form-control.add-on label .text-content .title {
+  margin-top: 0;
+  padding-top: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+section#content form .step .form-control.add-on label .text-content .subtitle {
+  margin-bottom: 0em;
+  font-weight: 400;
+}
+section#content form .step .form-control.add-on label .price {
+  font-size: 14px;
+  font-weight: 400;
+  color: hsl(243deg, 100%, 62%);
+}
+section#content form .step .double-check .list {
+  background-color: hsla(228deg, 100%, 84%, 0.1);
+  margin-bottom: 1em;
+  padding: 1.5em;
+  border-radius: 10px;
+}
+section#content form .step .double-check .list .plan {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1em;
+  border-bottom: 1px solid hsla(231deg, 11%, 63%, 0.3);
+}
+section#content form .step .double-check .list .plan .title {
+  font-size: 16px;
+  padding-top: 0;
+}
+section#content form .step .double-check .list .plan .change {
+  color: hsl(231deg, 11%, 63%);
+  border: none;
+  background-color: transparent;
+  padding-left: 0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+section#content form .step .double-check .list .plan .price {
+  font-size: 18px;
+  font-weight: 700;
+}
+section#content form .step .double-check .list .add-on {
+  margin-top: 1em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+section#content form .step .double-check .list .add-on .s {
+  color: hsl(231deg, 11%, 63%);
+}
+section#content form .step .double-check .total {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.25em;
+  color: hsl(231deg, 11%, 63%);
+}
+section#content form .step .double-check .total .price {
+  font-size: 20px;
+  font-weight: 700;
+  color: hsl(243deg, 100%, 62%);
+}
+section#content form .step.last-step {
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  margin-right: 0;
+}
+section#content form .step.last-step .title {
+  margin-top: 0.5em;
+  padding-top: 0;
+}
+
+@keyframes yearly {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(18px);
+  }
+}
+@keyframes monthly {
+  0% {
+    transform: translateX(18px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@media (max-width: 521px) {
+  section#content {
+    margin-right: 0;
+    margin-top: 6em;
+    z-index: 2;
+    justify-content: space-between;
+  }
+  section#content form {
+    margin: 0 1em;
+    background-color: hsl(0deg, 0%, 100%);
+    flex: 0;
+    border-radius: 10px;
+  }
+  section#content form .step {
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+  section#content form .step .title {
+    padding-top: 0;
+  }
+  section#content form .step .form-control.plan {
+    flex-flow: column nowrap;
+  }
+  section#content form .step .form-control.plan label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+  }
+  section#content form .step .form-control.plan label .text .title {
+    margin-top: 0;
+    font-size: 18px;
+  }
+  section#content form .step .double-check .total {
+    margin: 2em auto;
+  }
+  section#content form .step.last-step {
+    padding-top: 5em;
+    margin-right: 1.25em;
+    margin-left: 1.25em;
+    padding-bottom: 3em;
+    height: auto;
+  }
+  section#content form .step.last-step .subtitle {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+.functional-button {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-right: 2em;
+  margin-bottom: 2em;
+}
+.functional-button button {
+  cursor: pointer;
+  padding: 0.75em 1.5em;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
+.functional-button button:hover {
+  opacity: 0.9;
+}
+.functional-button button.next {
+  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(213deg, 96%, 18%);
+}
+.functional-button button.back {
+  padding-left: 0;
+  color: hsl(231deg, 11%, 63%);
+  background-color: transparent;
+}
+.functional-button button.submit {
+  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(243deg, 100%, 62%);
+}
+
+@media (max-width: 521px) {
+  .functional-button {
+    margin: 0;
+    padding: 1.25em;
+    background-color: hsl(0deg, 0%, 100%);
+  }
+}
+body {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Ubuntu";
+  color: hsl(231deg, 11%, 63%);
+  background-color: hsl(206deg, 94%, 87%);
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+body main {
+  margin: 15vh 20vw;
+  height: 75vh;
+  width: 60vw;
+  background-color: hsl(0deg, 0%, 100%);
+  display: flex;
+  border-radius: 10px;
+  gap: 6vw;
+}
+body p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+body .show {
+  display: block;
+}
+body .show-flex {
+  display: flex;
+}
+body .hidden {
+  display: none;
+}
+body .flex-end {
+  justify-content: flex-end;
+}
+body .flex-between {
+  justify-content: space-between;
+}
+
+@media (max-width: 521px) {
+  body main {
+    position: relative;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

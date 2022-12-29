@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Multi-step form</title>
+
+  <link rel="stylesheet" href="/style/index.css">
+</head>
+
+<body>
+  <main>
+    <!-- Sidebar start -->
+    <section id="sidebar">
+      <div class="step" step-id="1">
+        <p class="number">1</p>
+        <p class="subtitle">Step 1</p>
+        <p class="title">Your info</p>
+      </div>
+
+      <div class="step" step-id="2">
+        <p class="number">2</p>
+        <p class="subtitle">Step 2</p>
+        <p class="title">Select plan</p>
+      </div>
+
+      <div class="step" step-id="3">
+        <p class="number">3</p>
+        <p class="subtitle">Step 3</p>
+        <p class="title">Add-ons</p>
+      </div>
+
+      <div class="step" step-id="4">
+        <p class="number">4</p>
+        <p class="subtitle">Step 4</p>
+        <p class="title">Summary</p>
+      </div>
+    </section>
+
+    <!-- Sidebar end -->
+
+    <section id="content">
+      <form action="">
+        <!-- Step 1 start -->
+        <div class="step" step-id="1">
+          <h2 class="title">Personal info</h2>
+          <p class="subtitle">Please provide your name, email address, and phone number.</p>
+          <div class="form-control">
+            <div>
+              <label for="name">Name</label>
+              <p class="required">This field is required</p>
+            </div>
+            <input type="text" id="name" name="name" placeholder="e.g. Stephen King">
+          </div>
+          <div class="form-control">
+            <div>
+              <label for="email">Email Address</label>
+              <p class="required">This field is required</p>
+            </div>
+            <input type="email" id="email" name="email" placeholder="e.g. stephenking@lorem.com">
+          </div>
+          <div class="form-control">
+            <div>
+              <label for="phone">Phone Number</label>
+              <p class="required">This field is required</p>
+            </div>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. +1 234 567 890">
+          </div>
+        </div>
+        <!-- Step 1 end -->
+
+        <!-- Step 2 start -->
+        <div class="step" step-id="2">
+          <h2 class="title">Select your plan</h2>
+          <p class="subtitle">You have the option of monthly or yearly billing.</p>
+          <div class="form-control plan">
+            <input type="radio" id="arcade" class="hidden" name="plan" value="arcade" checked>
+            <label for="arcade">
+              <img src="/assets/images/icon-arcade.svg" alt="">
+              <div class="text">
+                <p class="title">
+                  Arcade
+                </p>
+                <p class="subtitle">
+                  $90/yr
+                </p>
+                <p class="deal">
+                  2 months free
+                </p>
+              </div>
+            </label>
+            <input type="radio" id="advanced" class="hidden" name="plan" value="advanced">
+            <label for="advanced">
+              <img src="/assets/images/icon-advanced.svg" alt="">
+              <div class="text">
+                <p class="title">
+                  Advanced
+                </p>
+                <p class="subtitle">
+                  $120/yr
+                </p>
+                <p class="deal">
+                  2 months free
+                </p>
+              </div>
+            </label>
+            <input type="radio" id="pro" class="hidden" name="plan" value="pro">
+            <label for="pro">
+              <img src="/assets/images/icon-pro.svg" alt="">
+              <div class="text">
+                <p class="title">
+                  Pro
+                </p>
+                <p class="subtitle">
+                  $150/yr
+                </p>
+                <p class="deal">
+                  2 months free
+                </p>
+              </div>
+            </label>
+          </div>
+          <div class="form-control choose-plan">
+            <input type="radio" id="monthly" class="hidden" name="choose-plan" value="monthly" checked>
+            <label for="monthly">
+              Monthly
+            </label>
+            <div class="toggle-switch">
+              <div class="slider"></div>
+            </div>
+            <input type="radio" id="yearly" class="hidden" name="choose-plan" value="yearly">
+            <label for="yearly">
+              Yearly
+            </label>
+
+          </div>
+        </div>
+        <!-- Step 2 end -->
+
+        <!-- Step 3 start -->
+        <div class="step" step-id="3">
+          <h2 class="title">Pick add-ons</h2>
+          <p class="subtitle">Add-ons help enhance your gaming experience.</p>
+          <div class="form-control add-on">
+            <input type="checkbox" id="online-service" class="hidden" name="online-service">
+            <label for="online-service">
+              <div class="custom-checkbox"></div>
+              <div class="text-content">
+                <p class="title">Online service</p>
+                <p class="subtitle">Access to multiplayer games</p>
+              </div>
+              <p class="price"></p>
+            </label>
+          </div>
+          <div class="form-control add-on">
+            <input type="checkbox" id="larger-storage" class="hidden" name="larger-storage">
+            <label for="larger-storage">
+              <div class="custom-checkbox"></div>
+              <div class="text-content">
+                <p class="title">Larger storage</p>
+                <p class="subtitle">Extra 1TB of cloud save</p>
+              </div>
+              <p class="price"></p>
+            </label>
+          </div>
+          <div class="form-control add-on">
+            <input type="checkbox" id="customizable-profile" class="hidden" name="customizable-profile">
+            <label for="customizable-profile">
+              <div class="custom-checkbox"></div>
+              <div class="text-content">
+                <p class="title">Customizable Profile</p>
+                <p class="subtitle">Custom theme on your profile</p>
+              </div>
+              <p class="price"></p>
+            </label>
+          </div>
+        </div>
+        <!-- Step 3 end -->
+
+        <!-- Step 4 start -->
+        <div class="step" step-id="4">
+          <h2 class="title">Finishing up</h2>
+          <p class="subtitle">Double-check everything looks OK before confirming.</p>
+          <!-- Dynamically add subscription and add-on selections here -->
+          <div class="double-check">
+            <div class="list">
+              <div class="plan">
+                <div>
+                  <p class="title">Arcade (Monthly)</p>
+                  <p class="change">Change</p>
+                </div>
+                <p class="price">$9/mo</p>
+              </div>
+            </div>
+            <div class="total">
+              <p class="text"></p>
+              <p class="price">+12$/mo</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 end -->
+
+        <!-- Step 5 start -->
+        <div class="step last-step hidden" step-id="5">
+          <img src="assets/images/icon-thank-you.svg" alt="thank you" class="icon-success">
+          <h2 class="title">Thank you!</h2>
+          <p class="subtitle">Thanks for confirming your subscription! We hope you have fun
+            using our platform. If you ever need support, please feel free
+            to email us at support@loremgaming.com.</p>
+
+        </div>
+        <!-- Step 5 end -->
+
+      </form>
+
+      <div class="functional-button">
+        <button class="back hidden">Go Back</button>
+        <button class="next hidden">Next Step</button>
+        <button class="submit hidden">Confirm</button>
+      </div>
+    </section>
+  </main>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Hatter (Vu)</a>.
+  </footer>
+
+  <script src="./script/index.js"></script>
+</body>
+
+</html>

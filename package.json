@@ -1,0 +1,14 @@
+{
+  "name": "multi-step-form-main",
+  "version": "1.0.0",
+  "description": "the practice of frontend mentor",
+  "main": "index.js",
+  "author": "ThanhVu(Hatter)",
+  "license": "MIT",
+  "dependencies": {
+    "sass": "^1.56.2"
+  },
+  "scripts": {
+    "render-style": "yarn sass --watch src/scss:style"
+  }
+}
