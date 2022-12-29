@@ -2,22 +2,22 @@
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 400;
-  src: url("../../../assets/fonts/Ubuntu-Regular.ttf");
+  src: url("../assets/fonts/Ubuntu-Regular.ttf");
 }
 @font-face {
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 500;
-  src: url("../../../assets/fonts/Ubuntu-Medium.ttf");
+  src: url("../assets/fonts/Ubuntu-Medium.ttf");
 }
 @font-face {
   font-family: "Ubuntu";
   font-style: normal;
   font-weight: 700;
-  src: url("../../../assets/fonts/Ubuntu-Bold.ttf");
+  src: url("../assets/fonts/Ubuntu-Bold.ttf");
 }
 section#sidebar {
-  background-image: url(../../../assets/images/bg-sidebar-desktop.svg);
+  background-image: url(../assets/images/bg-sidebar-desktop.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -88,7 +88,7 @@ section#sidebar .step .title {
     flex-flow: row nowrap;
     justify-content: center;
     gap: 1em;
-    background-image: url("../../../assets/images/bg-sidebar-mobile.svg");
+    background-image: url("../assets/images/bg-sidebar-mobile.svg");
     background-size: auto;
     background-position: 0 0;
     padding: 0;
